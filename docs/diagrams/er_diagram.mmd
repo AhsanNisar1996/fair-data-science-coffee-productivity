@@ -1,0 +1,64 @@
+erDiagram
+    COUNTRIES ||--o{ PARTICIPANTS : contains
+    GENDERS ||--o{ PARTICIPANTS : classifies
+    OCCUPATIONS ||--o{ PARTICIPANTS : classifies
+
+    PARTICIPANTS ||--|| COFFEE_CONSUMPTION : has
+    PARTICIPANTS ||--|| SLEEP_METRICS : has
+    PARTICIPANTS ||--|| HEALTH_METRICS : has
+    PARTICIPANTS ||--|| LIFESTYLE_METRICS : has
+
+    COUNTRIES {
+        int country_id PK
+        string country_name
+    }
+
+    GENDERS {
+        int gender_id PK
+        string gender_name
+    }
+
+    OCCUPATIONS {
+        int occupation_id PK
+        string occupation_name
+    }
+
+    PARTICIPANTS {
+        int participant_id PK
+        int age
+        int gender_id FK
+        int country_id FK
+        int occupation_id FK
+    }
+
+    COFFEE_CONSUMPTION {
+        int consumption_id PK
+        int participant_id FK
+        decimal coffee_intake_cups_per_day
+        decimal caffeine_mg_per_day
+    }
+
+    SLEEP_METRICS {
+        int sleep_id PK
+        int participant_id FK
+        decimal sleep_hours
+        string sleep_quality
+    }
+
+    HEALTH_METRICS {
+        int health_id PK
+        int participant_id FK
+        decimal bmi
+        int heart_rate_bpm
+        string health_issues
+    }
+
+    LIFESTYLE_METRICS {
+        int lifestyle_id PK
+        int participant_id FK
+        string stress_level
+        decimal physical_activity_hours
+        boolean smoking
+        boolean alcohol_consumption
+    }
+

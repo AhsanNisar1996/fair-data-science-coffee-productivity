@@ -1,0 +1,5 @@
+Metric,Value
+Accuracy,0.971
+Precision_Class_1,0.94
+Recall_Class_1,0.99
+F1_Class_1,0.96

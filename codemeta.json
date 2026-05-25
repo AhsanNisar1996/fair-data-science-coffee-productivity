@@ -1,0 +1,56 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Predicting Productivity Levels Based on Coffee Consumption",
+  "description": "A FAIR data science experiment investigating productivity prediction using coffee consumption and lifestyle related features.",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "codeRepository": "https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity/",
+  "programmingLanguage": [
+    "Python"
+  ],
+  "runtimePlatform": "Python 3.13",
+  "operatingSystem": [
+    "macOS",
+    "Linux",
+    "Windows"
+  ],
+  "applicationCategory": "Machine Learning",
+  "keywords": [
+    "FAIR",
+    "machine learning",
+    "coffee consumption",
+    "productivity",
+    "logistic regression",
+    "reproducibility"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Nisar",
+      "familyName": "Ahsan"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Bangash Muhammad Imran",
+      "familyName": "Haider"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Aykut Tayfun",
+      "familyName": "Güneş"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Gökay",
+      "familyName": "YILDIRIM"
+    }
+  ],
+  "softwareRequirements": [
+    "joblib==1.5.3",
+    "jupyterlab==4.5.7",
+    "matplotlib==3.10.9",
+    "numpy==2.4.6",
+    "pandas==3.0.3",
+    "scikit-learn==1.8.0"
+    ]
+}

@@ -1,0 +1,203 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Predicting Productivity Levels Based on Coffee Consumption",
+      "description": "A FAIR data science experiment that predicts an engineered productivity label using coffee consumption and lifestyle related features.",
+      "license": "MIT",
+      "hasPart": [
+        { "@id": "README.md" },
+        { "@id": "LICENSE" },
+        { "@id": "requirements.txt" },
+        { "@id": "codemeta.json" },
+        { "@id": "croissant.json" },
+        { "@id": "fair4ml-logistic-regression.json" },
+        { "@id": "docs/model-card.md" },
+        { "@id": "docs/reproducibility.md" },
+        { "@id": "docs/semantic_mapping.md" },
+        { "@id": "docs/unit_mapping.md" },
+        { "@id": "sql/schema.sql" },
+        { "@id": "docs/diagrams/er_diagram.mmd" },
+        { "@id": "notebooks/data_loading.ipynb" },
+        { "@id": "data/raw/synthetic_coffee_health_10000.csv" },
+        { "@id": "models/logistic_regression_pipeline.pkl" },
+        { "@id": "outputs/confusion_matrix.png" },
+        { "@id": "outputs/evaluation_metrics.csv" },
+        { "@id": "outputs/feature_distribution.png" },
+        { "@id": "outputs/model_comparison.csv" },
+        { "@id": "outputs/model_comparison.png" },
+        { "@id": "outputs/predictions.csv" }
+      ],
+      "author": [
+        { "@id": "#nisar-ahsan" },
+        { "@id": "#bangash-muhammad-imran-haider" },
+        { "@id": "#aykut-tayfun-gunes" },
+        { "@id": "#gokay-yildirim" }
+      ]
+    },
+
+    {
+      "@id": "README.md",
+      "@type": "File",
+      "name": "Project README"
+    },
+
+    {
+      "@id": "LICENSE",
+      "@type": "File",
+      "name": "MIT License"
+    },
+
+    {
+      "@id": "requirements.txt",
+      "@type": "File",
+      "name": "Python dependency list"
+    },
+
+    {
+      "@id": "codemeta.json",
+      "@type": "File",
+      "name": "CodeMeta software metadata"
+    },
+
+    {
+      "@id": "croissant.json",
+      "@type": "File",
+      "name": "Croissant dataset metadata"
+    },
+
+    {
+      "@id": "fair4ml-logistic-regression.json",
+      "@type": "File",
+      "name": "FAIR4ML metadata for Logistic Regression model"
+    },
+
+    {
+      "@id": "docs/model-card.md",
+      "@type": "File",
+      "name": "Model Card"
+    },
+
+    {
+      "@id": "docs/reproducibility.md",
+      "@type": "File",
+      "name": "Reproducibility documentation"
+    },
+
+    {
+      "@id": "docs/semantic_mapping.md",
+      "@type": "File",
+      "name": "Semantic mapping documentation"
+    },
+
+    {
+      "@id": "docs/unit_mapping.md",
+      "@type": "File",
+      "name": "Unit mapping documentation"
+    },
+
+    {
+      "@id": "sql/schema.sql",
+      "@type": "File",
+      "name": "Relational database schema"
+    },
+
+    {
+      "@id": "docs/diagrams/er_diagram.mmd",
+      "@type": "File",
+      "name": "Entity relationship diagram"
+    },
+
+    {
+      "@id": "notebooks/data_loading.ipynb",
+      "@type": [
+        "File",
+        "SoftwareSourceCode"
+      ],
+      "name": "Data loading and model training notebook",
+      "programmingLanguage": "Python"
+    },
+
+    {
+      "@id": "data/raw/synthetic_coffee_health_10000.csv",
+      "@type": "File",
+      "name": "Global Coffee Health Dataset raw CSV",
+      "encodingFormat": "text/csv"
+    },
+
+    {
+      "@id": "models/logistic_regression_pipeline.pkl",
+      "@type": "File",
+      "name": "Trained Logistic Regression pipeline",
+      "encodingFormat": "application/octet-stream"
+    },
+
+    {
+      "@id": "outputs/confusion_matrix.png",
+      "@type": "File",
+      "name": "Confusion matrix figure",
+      "encodingFormat": "image/png"
+    },
+
+    {
+      "@id": "outputs/evaluation_metrics.csv",
+      "@type": "File",
+      "name": "Evaluation metrics table",
+      "encodingFormat": "text/csv"
+    },
+
+    {
+      "@id": "outputs/feature_distribution.png",
+      "@type": "File",
+      "name": "Feature distribution figure",
+      "encodingFormat": "image/png"
+    },
+
+    {
+      "@id": "outputs/model_comparison.csv",
+      "@type": "File",
+      "name": "Model comparison table",
+      "encodingFormat": "text/csv"
+    },
+
+    {
+      "@id": "outputs/model_comparison.png",
+      "@type": "File",
+      "name": "Model comparison figure",
+      "encodingFormat": "image/png"
+    },
+
+    {
+      "@id": "outputs/predictions.csv",
+      "@type": "File",
+      "name": "Prediction results",
+      "encodingFormat": "text/csv"
+    },
+
+    {
+      "@id": "#nisar-ahsan",
+      "@type": "Person",
+      "name": "Nisar Ahsan"
+    },
+
+    {
+      "@id": "#bangash-muhammad-imran-haider",
+      "@type": "Person",
+      "name": "Bangash Muhammad Imran Haider"
+    },
+
+    {
+      "@id": "#aykut-tayfun-gunes",
+      "@type": "Person",
+      "name": "Aykut Tayfun Güneş"
+    },
+
+    {
+      "@id": "#gokay-yildirim",
+      "@type": "Person",
+      "name": "Gökay YILDIRIM"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/"
+  },
+  "@type": "Dataset",
+  "name": "Global Coffee Health Dataset Processed Experiment",
+  "description": "Processed machine learning dataset used for productivity prediction experiments.",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Nisar Ahsan"
+    },
+    {
+      "@type": "Person",
+      "name": "Bangash Muhammad Imran Haider"
+    },
+    {
+      "@type": "Person",
+      "name": "Aykut Tayfun Güneş"
+    },
+    {
+      "@type": "Person",
+      "name": "Gökay YILDIRIM"
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "contentUrl": "./data/raw/synthetic_coffee_health_10000.csv",
+      "encodingFormat": "text/csv"
+    }
+  ],
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "Coffee_Intake",
+      "description": "Daily coffee intake in cups per day"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Caffeine_mg",
+      "description": "Daily caffeine consumption in milligrams"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Sleep_Hours",
+      "description": "Average sleep duration in hours"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "BMI",
+      "description": "Body Mass Index"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Heart_Rate",
+      "description": "Heart rate in beats per minute"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Physical_Activity_Hours",
+      "description": "Physical activity duration in hours"
+    }
+  ]
+}

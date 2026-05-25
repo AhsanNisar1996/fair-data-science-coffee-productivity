@@ -1,0 +1,57 @@
+{
+  "model_name": "Logistic Regression Productivity Predictor",
+  "model_type": "classification",
+  "algorithm": "Logistic Regression",
+  "software": {
+    "library": "scikit-learn",
+    "version": "1.8.0"
+  },
+  "model_artifact": "models/logistic_regression_pipeline.pkl",
+  "training_dataset": {
+    "name": "Global Coffee Health Dataset",
+    "source": "https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset",
+    "local_file": "data/raw/synthetic_coffee_health_10000.csv"
+  },
+  "features": [
+    "Age",
+    "Coffee_Intake",
+    "Caffeine_mg",
+    "Sleep_Hours",
+    "Sleep_Quality_Encoded",
+    "BMI",
+    "Heart_Rate",
+    "Stress_Level_Encoded",
+    "Physical_Activity_Hours",
+    "Smoking",
+    "Alcohol_Consumption"
+  ],
+  "target": {
+    "name": "Productivity_Label",
+    "description": "Engineered binary productivity label derived from sleep duration, sleep quality, and stress level."
+  },
+  "hyperparameters": {
+    "max_iter": 5000,
+    "random_state": 42,
+    "scaling": "StandardScaler"
+  },
+  "evaluation": {
+    "test_size": 0.2,
+    "stratified_split": true,
+    "accuracy": 0.971,
+    "precision_class_1": 0.94,
+    "recall_class_1": 0.99,
+    "f1_class_1": 0.96
+  },
+  "intended_use": "Educational FAIR data science experiment and reproducible machine learning demonstration.",
+  "limitations": [
+    "The productivity label is engineered and not scientifically validated.",
+    "The model should not be used for workplace or medical decision making.",
+    "Some model performance is influenced by feature engineering choices."
+  ],
+  "related_files": {
+    "model_card": "docs/model-card.md",
+    "metrics": "outputs/evaluation_metrics.csv",
+    "confusion_matrix": "outputs/confusion_matrix.png",
+    "predictions": "outputs/predictions.csv"
+  }
+}
