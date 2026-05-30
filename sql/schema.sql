@@ -1,7 +1,11 @@
 -- =====================================================
 -- FAIR Data Science Coffee Productivity Project
 -- WP2 - T2.1 Database Schema (3NF)
--- WP2 - T2.4 Machine Learning Feature View
+-- WP2 - T2.4 Machine Learning Feature Views
+--
+-- Views defined:
+--   vw_productivity_features     -- full feature table for ML pipeline
+--   vw_coffee_health_aggregates  -- per-group health aggregates for EDA
 -- =====================================================
 
 CREATE TABLE countries (
@@ -95,3 +99,35 @@ JOIN coffee_consumption cc ON p.participant_id = cc.participant_id
 JOIN sleep_metrics sm ON p.participant_id = sm.participant_id
 JOIN health_metrics hm ON p.participant_id = hm.participant_id
 JOIN lifestyle_metrics lm ON p.participant_id = lm.participant_id;
+
+-- =====================================================
+-- Exploratory Data Analysis Aggregation View
+-- =====================================================
+-- Purpose: Groups participants by coffee intake category and stress level,
+-- exposing average health indicators per group. Useful for exploratory
+-- analysis of how lifestyle patterns relate to health outcomes, and as a
+-- sanity-check that the relational joins are producing correct results.
+
+CREATE VIEW vw_coffee_health_aggregates AS
+SELECT
+    CASE
+        WHEN cc.coffee_intake_cups_per_day = 0          THEN 'None'
+        WHEN cc.coffee_intake_cups_per_day BETWEEN 1 AND 2 THEN 'Low (1-2 cups)'
+        WHEN cc.coffee_intake_cups_per_day BETWEEN 3 AND 4 THEN 'Moderate (3-4 cups)'
+        ELSE 'High (5+ cups)'
+    END AS coffee_intake_category,
+    lm.stress_level,
+    COUNT(p.participant_id)                              AS participant_count,
+    ROUND(AVG(p.age)::NUMERIC, 1)                        AS avg_age,
+    ROUND(AVG(cc.caffeine_mg_per_day)::NUMERIC, 1)       AS avg_caffeine_mg,
+    ROUND(AVG(sm.sleep_hours)::NUMERIC, 2)               AS avg_sleep_hours,
+    ROUND(AVG(hm.bmi)::NUMERIC, 2)                       AS avg_bmi,
+    ROUND(AVG(hm.heart_rate_bpm)::NUMERIC, 1)            AS avg_heart_rate_bpm,
+    ROUND(AVG(lm.physical_activity_hours)::NUMERIC, 2)   AS avg_physical_activity_hours
+FROM participants p
+JOIN coffee_consumption cc  ON p.participant_id = cc.participant_id
+JOIN sleep_metrics sm       ON p.participant_id = sm.participant_id
+JOIN health_metrics hm      ON p.participant_id = hm.participant_id
+JOIN lifestyle_metrics lm   ON p.participant_id = lm.participant_id
+GROUP BY coffee_intake_category, lm.stress_level
+ORDER BY coffee_intake_category, lm.stress_level;

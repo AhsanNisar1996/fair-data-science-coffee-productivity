@@ -1,15 +1,47 @@
 cff-version: 1.2.0
-title: FAIR Data Science Coffee Productivity
-message: "If you use this software, please cite it as below."
-
-authors:
-
-* family-names: Nisar
-  given-names: Ahsan
-  orcid: "https://orcid.org/0009-0002-0185-7981"
-
-doi: 10.5281/zenodo.20465132
-
-repository-code: https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity
-
+message: "If you use this software or experiment, please cite it as below."
+type: software
+title: "Predicting Productivity Levels Based on Coffee Consumption"
+version: 1.0.0
+date-released: 2026-05-26
 license: MIT
+repository-code: "https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity/"
+doi: "10.5281/zenodo.20465131"
+abstract: >
+  A FAIR data science experiment that predicts an engineered binary productivity label
+  using coffee consumption and lifestyle variables from the Global Coffee Health Dataset.
+  The experiment applies logistic regression and demonstrates relational data modelling,
+  semantic metadata annotation, and reproducible machine learning workflows.
+keywords:
+  - FAIR data science
+  - machine learning
+  - coffee consumption
+  - productivity prediction
+  - logistic regression
+  - reproducibility
+  - RO-Crate
+  - data stewardship
+authors:
+  - family-names: Ahsan
+    given-names: Nisar
+    affiliation: "TU Wien"
+    orcid: "https://orcid.org/0009-0002-0185-7981"
+  - family-names: Haider
+    given-names: "Bangash Muhammad Imran"
+    affiliation: "TU Wien"
+    orcid: "https://orcid.org/0009-0003-0882-0011"
+  - family-names: Tayfun
+    given-names: "Güneş Aykut"
+    affiliation: "TU Wien"
+    orcid: "https://orcid.org/0009-0004-1597-039X"
+  - family-names: YILDIRIM
+    given-names: Gökay
+    affiliation: "TU Wien"
+    orcid: "https://orcid.org/0009-0005-3902-8742"
+references:
+  - type: dataset
+    title: "Global Coffee Health Dataset"
+    authors:
+      - name: "uom190346a (Kaggle)"
+    url: "https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset"
+    license: "CC BY 4.0"

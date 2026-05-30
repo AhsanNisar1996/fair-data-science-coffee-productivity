@@ -1,13 +1,19 @@
 {
   "@context": {
     "@vocab": "https://schema.org/",
-    "cr": "http://mlcommons.org/croissant/"
+    "cr": "http://mlcommons.org/croissant/",
+    "qudt": "http://qudt.org/vocab/unit/"
   },
-  "@type": "Dataset",
-  "name": "Global Coffee Health Dataset Processed Experiment",
-  "description": "Processed machine learning dataset used for productivity prediction experiments.",
-  "license": "https://spdx.org/licenses/MIT.html",
-  "creator": [
+  "@type": "cr:Dataset",
+  "name": "Global Coffee Health Dataset",
+  "description": "A synthetic dataset of 10,000 participants containing coffee consumption, sleep, health, and lifestyle variables. Used for a FAIR data science machine learning experiment predicting an engineered productivity label.",
+  "url": "https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "Kaggle / Original Dataset Authors (uom190346a)"
+  },
+  "publisher": [
     {
       "@type": "Person",
       "name": "Nisar Ahsan"
@@ -18,7 +24,7 @@
     },
     {
       "@type": "Person",
-      "name": "Aykut Tayfun Güneş"
+      "name": "Güneş Aykut Tayfun"
     },
     {
       "@type": "Person",
@@ -27,41 +33,164 @@
   ],
   "distribution": [
     {
-      "@type": "DataDownload",
-      "contentUrl": "./data/raw/synthetic_coffee_health_10000.csv",
-      "encodingFormat": "text/csv"
+      "@type": "cr:FileObject",
+      "@id": "synthetic_coffee_health_10000-csv",
+      "name": "synthetic_coffee_health_10000.csv",
+      "description": "Raw input dataset in CSV format",
+      "contentUrl": "data/raw/synthetic_coffee_health_10000.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "e6ee57ea11bd1fdb4464cc1318a987a0ea0d1a36b079aee510a37669584488f2"
     }
   ],
-  "variableMeasured": [
+  "recordSet": [
     {
-      "@type": "PropertyValue",
-      "name": "Coffee_Intake",
-      "description": "Daily coffee intake in cups per day"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Caffeine_mg",
-      "description": "Daily caffeine consumption in milligrams"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Sleep_Hours",
-      "description": "Average sleep duration in hours"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "BMI",
-      "description": "Body Mass Index"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Heart_Rate",
-      "description": "Heart rate in beats per minute"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Physical_Activity_Hours",
-      "description": "Physical activity duration in hours"
+      "@type": "cr:RecordSet",
+      "@id": "coffee-health-records",
+      "name": "Coffee Health Records",
+      "description": "One row per participant with all health, lifestyle, and coffee consumption measurements.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "field-id",
+          "name": "ID",
+          "description": "Unique participant identifier",
+          "dataType": "sc:Integer",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "ID" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-age",
+          "name": "Age",
+          "description": "Participant age in years",
+          "dataType": "sc:Integer",
+          "unitText": "year",
+          "unitCode": "http://qudt.org/vocab/unit/YR",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Age" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-gender",
+          "name": "Gender",
+          "description": "Participant gender category",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Gender" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-country",
+          "name": "Country",
+          "description": "Country of participant residence",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Country" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-coffee-intake",
+          "name": "Coffee_Intake",
+          "description": "Daily coffee intake in cups per day",
+          "dataType": "sc:Float",
+          "unitText": "cups per day",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Coffee_Intake" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-caffeine-mg",
+          "name": "Caffeine_mg",
+          "description": "Daily caffeine consumption in milligrams",
+          "dataType": "sc:Float",
+          "unitText": "milligram",
+          "unitCode": "http://qudt.org/vocab/unit/MilliGM",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Caffeine_mg" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-sleep-hours",
+          "name": "Sleep_Hours",
+          "description": "Average daily sleep duration in hours",
+          "dataType": "sc:Float",
+          "unitText": "hour",
+          "unitCode": "http://qudt.org/vocab/unit/HR",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Sleep_Hours" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-sleep-quality",
+          "name": "Sleep_Quality",
+          "description": "Self-reported categorical sleep quality (e.g. Poor, Good, Excellent)",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Sleep_Quality" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-bmi",
+          "name": "BMI",
+          "description": "Body Mass Index (weight in kg divided by height in metres squared)",
+          "dataType": "sc:Float",
+          "unitText": "kilogram per square metre",
+          "unitCode": "http://qudt.org/vocab/unit/KiloGM-PER-M2",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "BMI" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-heart-rate",
+          "name": "Heart_Rate",
+          "description": "Resting heart rate in beats per minute",
+          "dataType": "sc:Integer",
+          "unitText": "beat per minute",
+          "unitCode": "http://qudt.org/vocab/unit/BEAT-PER-MIN",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Heart_Rate" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-stress-level",
+          "name": "Stress_Level",
+          "description": "Self-reported stress level category (e.g. Low, Medium, High)",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Stress_Level" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-physical-activity",
+          "name": "Physical_Activity_Hours",
+          "description": "Daily hours of physical activity",
+          "dataType": "sc:Float",
+          "unitText": "hour",
+          "unitCode": "http://qudt.org/vocab/unit/HR",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Physical_Activity_Hours" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-health-issues",
+          "name": "Health_Issues",
+          "description": "Self-reported existing health conditions (free text / categorical)",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Health_Issues" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-occupation",
+          "name": "Occupation",
+          "description": "Participant employment category",
+          "dataType": "sc:Text",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Occupation" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-smoking",
+          "name": "Smoking",
+          "description": "Smoking behaviour status (boolean)",
+          "dataType": "sc:Boolean",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Smoking" } }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "field-alcohol",
+          "name": "Alcohol_Consumption",
+          "description": "Alcohol consumption status (boolean)",
+          "dataType": "sc:Boolean",
+          "source": { "fileObject": { "@id": "synthetic_coffee_health_10000-csv" }, "extract": { "column": "Alcohol_Consumption" } }
+        }
+      ]
     }
   ]
 }

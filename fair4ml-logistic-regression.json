@@ -53,5 +53,10 @@
     "metrics": "outputs/evaluation_metrics.csv",
     "confusion_matrix": "outputs/confusion_matrix.png",
     "predictions": "outputs/predictions.csv"
-  }
+  },
+  "model_doi": "https://handle.test.datacite.org/10.70124/evzd7-5m822",
+  "tuwrd_deposit": "https://test.researchdata.tuwien.ac.at",
+  "zenodo_archive": "https://doi.org/10.5281/zenodo.20465131",
+  "github_repository": "https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity/",
+  "dbrepo_entry": "https://test.dbrepo.tuwien.ac.at/database/a6229b2e-5a3d-4a46-93aa-e9474f492ec1"
 }

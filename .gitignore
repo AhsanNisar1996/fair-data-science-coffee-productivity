@@ -234,3 +234,13 @@ venv/
 # Large temporary files
 *.tmp
 
+
+# Project-specific excludes — internal working files not needed in GitHub
+.~lock.*
+*.tmp
+ORCIDs.txt
+2026-Dast-Excercise-Part3.pdf
+DMP_FAIR_Data_Science___Coffee_Productivity_Prediction_20260526*
+docs/team_tasks_remaining.md
+inital dmp submission/
+synthetic_coffee_health_10000.csv

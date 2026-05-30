@@ -2,202 +2,394 @@
   "@context": "https://w3id.org/ro/crate/1.1/context",
   "@graph": [
     {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
       "@id": "./",
       "@type": "Dataset",
       "name": "Predicting Productivity Levels Based on Coffee Consumption",
-      "description": "A FAIR data science experiment that predicts an engineered productivity label using coffee consumption and lifestyle related features.",
-      "license": "MIT",
+      "description": "A FAIR data science experiment that predicts an engineered productivity label using coffee consumption and lifestyle related features from the Global Coffee Health Dataset. The experiment applies logistic regression and demonstrates relational data modelling, semantic metadata, and reproducible ML workflows.",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT.html"
+      },
+      "datePublished": "2026-05-26",
+      "url": "https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity/",
       "hasPart": [
-        { "@id": "README.md" },
-        { "@id": "LICENSE" },
-        { "@id": "requirements.txt" },
-        { "@id": "codemeta.json" },
-        { "@id": "croissant.json" },
-        { "@id": "fair4ml-logistic-regression.json" },
-        { "@id": "docs/model-card.md" },
-        { "@id": "docs/reproducibility.md" },
-        { "@id": "docs/semantic_mapping.md" },
-        { "@id": "docs/unit_mapping.md" },
-        { "@id": "sql/schema.sql" },
-        { "@id": "docs/diagrams/er_diagram.mmd" },
-        { "@id": "notebooks/data_loading.ipynb" },
-        { "@id": "data/raw/synthetic_coffee_health_10000.csv" },
-        { "@id": "models/logistic_regression_pipeline.pkl" },
-        { "@id": "outputs/confusion_matrix.png" },
-        { "@id": "outputs/evaluation_metrics.csv" },
-        { "@id": "outputs/feature_distribution.png" },
-        { "@id": "outputs/model_comparison.csv" },
-        { "@id": "outputs/model_comparison.png" },
-        { "@id": "outputs/predictions.csv" }
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "LICENSE"
+        },
+        {
+          "@id": "requirements.txt"
+        },
+        {
+          "@id": "codemeta.json"
+        },
+        {
+          "@id": "croissant.json"
+        },
+        {
+          "@id": "CITATION.cff"
+        },
+        {
+          "@id": "fair4ml-logistic-regression.json"
+        },
+        {
+          "@id": "docs/model-card.md"
+        },
+        {
+          "@id": "docs/reproducibility.md"
+        },
+        {
+          "@id": "docs/semantic_mapping.md"
+        },
+        {
+          "@id": "docs/unit_mapping.md"
+        },
+        {
+          "@id": "docs/standards_overlap_analysis.md"
+        },
+        {
+          "@id": "sql/schema.sql"
+        },
+        {
+          "@id": "docs/diagrams/er_diagram.mmd"
+        },
+        {
+          "@id": "notebooks/data_loading.ipynb"
+        },
+        {
+          "@id": "data/raw/synthetic_coffee_health_10000.csv"
+        },
+        {
+          "@id": "models/logistic_regression_pipeline.pkl"
+        },
+        {
+          "@id": "outputs/confusion_matrix.png"
+        },
+        {
+          "@id": "outputs/evaluation_metrics.csv"
+        },
+        {
+          "@id": "outputs/feature_distribution.png"
+        },
+        {
+          "@id": "outputs/model_comparison.csv"
+        },
+        {
+          "@id": "outputs/model_comparison.png"
+        },
+        {
+          "@id": "outputs/predictions.csv"
+        },
+        {
+          "@id": "docs/validation/ro-crate-validation.txt"
+        }
       ],
       "author": [
-        { "@id": "#nisar-ahsan" },
-        { "@id": "#bangash-muhammad-imran-haider" },
-        { "@id": "#aykut-tayfun-gunes" },
-        { "@id": "#gokay-yildirim" }
+        {
+          "@id": "https://orcid.org/0009-0002-0185-7981"
+        },
+        {
+          "@id": "https://orcid.org/0009-0003-0882-0011"
+        },
+        {
+          "@id": "https://orcid.org/0009-0004-1597-039X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-3902-8742"
+        }
+      ],
+      "relatedLink": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.20465131",
+          "@type": "CreativeWork",
+          "name": "Zenodo archive deposit"
+        },
+        {
+          "@id": "https://handle.test.datacite.org/10.70124/evzd7-5m822",
+          "@type": "CreativeWork",
+          "name": "TUWRD model deposit"
+        },
+        {
+          "@id": "https://handle.test.datacite.org/10.70124/rsrjw-zsn22",
+          "@type": "CreativeWork",
+          "name": "TUWRD generated data deposit"
+        },
+        {
+          "@id": "https://handle.test.datacite.org/10.70124/rpq9f-44115",
+          "@type": "CreativeWork",
+          "name": "TUWRD Data Management Plan deposit"
+        }
       ]
     },
-
+    {
+      "@id": "https://orcid.org/0009-0002-0185-7981",
+      "@type": "Person",
+      "name": "Nisar Ahsan",
+      "affiliation": {
+        "@id": "https://ror.org/04d836q62"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0003-0882-0011",
+      "@type": "Person",
+      "name": "Bangash Muhammad Imran Haider",
+      "affiliation": {
+        "@id": "https://ror.org/04d836q62"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0004-1597-039X",
+      "@type": "Person",
+      "name": "Gunes Aykut Tayfun",
+      "affiliation": {
+        "@id": "https://ror.org/04d836q62"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-3902-8742",
+      "@type": "Person",
+      "name": "Gokay YILDIRIM",
+      "affiliation": {
+        "@id": "https://ror.org/04d836q62"
+      }
+    },
+    {
+      "@id": "https://ror.org/04d836q62",
+      "@type": "Organization",
+      "name": "TU Wien"
+    },
+    {
+      "@id": "https://www.python.org/",
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "url": "https://www.python.org/"
+    },
     {
       "@id": "README.md",
       "@type": "File",
-      "name": "Project README"
+      "name": "Project README",
+      "encodingFormat": "text/markdown"
     },
-
     {
       "@id": "LICENSE",
       "@type": "File",
-      "name": "MIT License"
+      "name": "MIT Licence file",
+      "encodingFormat": "text/plain"
     },
-
     {
       "@id": "requirements.txt",
       "@type": "File",
-      "name": "Python dependency list"
+      "name": "Python dependency list with pinned versions",
+      "encodingFormat": "text/plain"
     },
-
     {
       "@id": "codemeta.json",
-      "@type": "File",
-      "name": "CodeMeta software metadata"
+      "@type": [
+        "File",
+        "SoftwareSourceCode"
+      ],
+      "name": "CodeMeta 2.0 software metadata",
+      "encodingFormat": "application/json",
+      "conformsTo": {
+        "@id": "https://doi.org/10.5063/schema/codemeta-2.0"
+      }
     },
-
     {
       "@id": "croissant.json",
-      "@type": "File",
-      "name": "Croissant dataset metadata"
+      "@type": [
+        "File",
+        "Dataset"
+      ],
+      "name": "Croissant JSON-LD dataset metadata",
+      "encodingFormat": "application/ld+json"
     },
-
+    {
+      "@id": "CITATION.cff",
+      "@type": "File",
+      "name": "Citation File Format metadata",
+      "encodingFormat": "text/yaml"
+    },
     {
       "@id": "fair4ml-logistic-regression.json",
       "@type": "File",
-      "name": "FAIR4ML metadata for Logistic Regression model"
+      "name": "FAIR4ML metadata for Logistic Regression model",
+      "encodingFormat": "application/json",
+      "about": {
+        "@id": "models/logistic_regression_pipeline.pkl"
+      }
     },
-
     {
       "@id": "docs/model-card.md",
       "@type": "File",
-      "name": "Model Card"
+      "name": "Model Card for Logistic Regression Productivity Predictor",
+      "encodingFormat": "text/markdown",
+      "about": {
+        "@id": "models/logistic_regression_pipeline.pkl"
+      }
     },
-
     {
       "@id": "docs/reproducibility.md",
       "@type": "File",
-      "name": "Reproducibility documentation"
+      "name": "Reproducibility guide",
+      "encodingFormat": "text/markdown"
     },
-
     {
       "@id": "docs/semantic_mapping.md",
       "@type": "File",
-      "name": "Semantic mapping documentation"
+      "name": "Semantic ontology mapping for dataset attributes",
+      "encodingFormat": "text/markdown"
     },
-
     {
       "@id": "docs/unit_mapping.md",
       "@type": "File",
-      "name": "Unit mapping documentation"
+      "name": "Unit of measurement mapping with QUDT URIs",
+      "encodingFormat": "text/markdown"
     },
-
+    {
+      "@id": "docs/standards_overlap_analysis.md",
+      "@type": "File",
+      "name": "Metadata standards overlap analysis (T3.11)",
+      "encodingFormat": "text/markdown"
+    },
     {
       "@id": "sql/schema.sql",
       "@type": "File",
-      "name": "Relational database schema"
+      "name": "Relational database schema (3NF) with SQL VIEW definitions",
+      "encodingFormat": "application/sql"
     },
-
     {
       "@id": "docs/diagrams/er_diagram.mmd",
       "@type": "File",
-      "name": "Entity relationship diagram"
+      "name": "Entity-Relationship diagram (Mermaid format)",
+      "encodingFormat": "text/plain"
     },
-
     {
       "@id": "notebooks/data_loading.ipynb",
       "@type": [
         "File",
         "SoftwareSourceCode"
       ],
-      "name": "Data loading and model training notebook",
-      "programmingLanguage": "Python"
+      "name": "Data loading, normalisation, and model training notebook",
+      "programmingLanguage": {
+        "@id": "https://www.python.org/"
+      },
+      "encodingFormat": "application/x-ipynb+json"
     },
-
     {
       "@id": "data/raw/synthetic_coffee_health_10000.csv",
-      "@type": "File",
-      "name": "Global Coffee Health Dataset raw CSV",
-      "encodingFormat": "text/csv"
+      "@type": [
+        "File",
+        "Dataset"
+      ],
+      "name": "Global Coffee Health Dataset - raw input CSV",
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "url": "https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset"
     },
-
     {
       "@id": "models/logistic_regression_pipeline.pkl",
-      "@type": "File",
-      "name": "Trained Logistic Regression pipeline",
-      "encodingFormat": "application/octet-stream"
+      "@type": [
+        "File",
+        "SoftwareApplication"
+      ],
+      "name": "Trained Logistic Regression pipeline (scikit-learn pickle)",
+      "encodingFormat": "application/octet-stream",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "identifier": "https://handle.test.datacite.org/10.70124/evzd7-5m822"
     },
-
     {
       "@id": "outputs/confusion_matrix.png",
       "@type": "File",
       "name": "Confusion matrix figure",
-      "encodingFormat": "image/png"
+      "encodingFormat": "image/png",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
-
     {
       "@id": "outputs/evaluation_metrics.csv",
-      "@type": "File",
+      "@type": [
+        "File",
+        "Dataset"
+      ],
       "name": "Evaluation metrics table",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
-
     {
       "@id": "outputs/feature_distribution.png",
       "@type": "File",
       "name": "Feature distribution figure",
-      "encodingFormat": "image/png"
+      "encodingFormat": "image/png",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
-
     {
       "@id": "outputs/model_comparison.csv",
-      "@type": "File",
+      "@type": [
+        "File",
+        "Dataset"
+      ],
       "name": "Model comparison table",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
-
     {
       "@id": "outputs/model_comparison.png",
       "@type": "File",
       "name": "Model comparison figure",
-      "encodingFormat": "image/png"
+      "encodingFormat": "image/png",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
-
     {
       "@id": "outputs/predictions.csv",
+      "@type": [
+        "File",
+        "Dataset"
+      ],
+      "name": "Model prediction results",
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    },
+    {
+      "@id": "https://spdx.org/licenses/MIT.html",
+      "@type": "CreativeWork",
+      "name": "MIT Licence"
+    },
+    {
+      "@id": "docs/validation/ro-crate-validation.txt",
       "@type": "File",
-      "name": "Prediction results",
-      "encodingFormat": "text/csv"
-    },
-
-    {
-      "@id": "#nisar-ahsan",
-      "@type": "Person",
-      "name": "Nisar Ahsan"
-    },
-
-    {
-      "@id": "#bangash-muhammad-imran-haider",
-      "@type": "Person",
-      "name": "Bangash Muhammad Imran Haider"
-    },
-
-    {
-      "@id": "#aykut-tayfun-gunes",
-      "@type": "Person",
-      "name": "Aykut Tayfun Güneş"
-    },
-
-    {
-      "@id": "#gokay-yildirim",
-      "@type": "Person",
-      "name": "Gökay YILDIRIM"
+      "name": "RO-Crate validation report",
+      "encodingFormat": "text/plain"
     }
   ]
 }

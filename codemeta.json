@@ -2,11 +2,16 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Predicting Productivity Levels Based on Coffee Consumption",
-  "description": "A FAIR data science experiment investigating productivity prediction using coffee consumption and lifestyle related features.",
+  "version": "1.0.0",
+  "description": "A FAIR data science experiment investigating productivity prediction using coffee consumption and lifestyle related features. The experiment applies logistic regression to an engineered productivity label derived from sleep and stress indicators, and demonstrates relational data modelling, semantic metadata annotation, and reproducible ML workflows.",
   "license": "https://spdx.org/licenses/MIT.html",
   "codeRepository": "https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity/",
   "programmingLanguage": [
-    "Python"
+    {
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "version": "3.13"
+    }
   ],
   "runtimePlatform": "Python 3.13",
   "operatingSystem": [
@@ -21,28 +26,50 @@
     "coffee consumption",
     "productivity",
     "logistic regression",
-    "reproducibility"
+    "reproducibility",
+    "RO-Crate",
+    "data stewardship"
   ],
   "author": [
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0002-0185-7981",
       "givenName": "Nisar",
-      "familyName": "Ahsan"
+      "familyName": "Ahsan",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "TU Wien"
+      }
     },
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0003-0882-0011",
       "givenName": "Bangash Muhammad Imran",
-      "familyName": "Haider"
+      "familyName": "Haider",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "TU Wien"
+      }
     },
     {
       "@type": "Person",
-      "givenName": "Aykut Tayfun",
-      "familyName": "Güneş"
+      "@id": "https://orcid.org/0009-0004-1597-039X",
+      "givenName": "Güneş Aykut",
+      "familyName": "Tayfun",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "TU Wien"
+      }
     },
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0005-3902-8742",
       "givenName": "Gökay",
-      "familyName": "YILDIRIM"
+      "familyName": "YILDIRIM",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "TU Wien"
+      }
     }
   ],
   "softwareRequirements": [
@@ -52,5 +79,8 @@
     "numpy==2.4.6",
     "pandas==3.0.3",
     "scikit-learn==1.8.0"
-    ]
+  ],
+  "developmentStatus": "active",
+  "identifier": "https://doi.org/10.5281/zenodo.20465131",
+  "downloadUrl": "https://zenodo.org/records/20465131"
 }

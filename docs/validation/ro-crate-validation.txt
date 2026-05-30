@@ -1,0 +1,57 @@
+RO-Crate Validation Report
+==================================================
+Crate path: fair-data-science-coffee-productivity/
+Profile: RO-Crate 1.1 (https://w3id.org/ro/crate/1.1)
+Validated with: rocrate Python library
+Date: 2026-05-30
+
+[PASS] Metadata descriptor found: ro-crate-metadata.json
+[PASS] conformsTo: https://w3id.org/ro/crate/1.1
+[PASS] about points to root Dataset (./) 
+[PASS] Root Dataset found: ./
+[PASS] Root Dataset has 'name'
+[PASS] Root Dataset has 'description'
+[PASS] Root Dataset has 'license'
+[PASS] Root Dataset has 'datePublished'
+[PASS] 4 author(s) listed
+[PASS] 23 hasPart entries
+
+Total entities in @graph: 33
+
+Person entities: 4
+  - https://orcid.org/0009-0002-0185-7981 | Nisar Ahsan
+  - https://orcid.org/0009-0003-0882-0011 | Bangash Muhammad Imran Haider
+  - https://orcid.org/0009-0004-1597-039X | Gunes Aykut Tayfun
+  - https://orcid.org/0009-0005-3902-8742 | Gokay YILDIRIM
+Organization entities: 1
+  - https://ror.org/04d836q62 | TU Wien
+File entities: 23
+  - README.md
+  - LICENSE
+  - requirements.txt
+  - codemeta.json
+  - croissant.json
+  - CITATION.cff
+  - fair4ml-logistic-regression.json
+  - docs/model-card.md
+  - docs/reproducibility.md
+  - docs/semantic_mapping.md
+  - docs/unit_mapping.md
+  - docs/standards_overlap_analysis.md
+  - sql/schema.sql
+  - docs/diagrams/er_diagram.mmd
+  - notebooks/data_loading.ipynb
+  - data/raw/synthetic_coffee_health_10000.csv
+  - models/logistic_regression_pipeline.pkl
+  - outputs/confusion_matrix.png
+  - outputs/evaluation_metrics.csv
+  - outputs/feature_distribution.png
+  - outputs/model_comparison.csv
+  - outputs/model_comparison.png
+  - outputs/predictions.csv
+
+Validation result: PASS
+The RO-Crate metadata descriptor is present and well-formed.
+All mandatory fields are populated.
+All four authors have ORCID identifiers.
+Licence entities are defined for both MIT and CC BY 4.0.

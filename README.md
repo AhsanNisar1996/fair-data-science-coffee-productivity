@@ -1,262 +1,119 @@
 # Predicting Productivity Levels Based on Coffee Consumption
-[![DOI](https://zenodo.org/badge/1232220288.svg)](https://doi.org/10.5281/zenodo.20465131)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20465131.svg)](https://doi.org/10.5281/zenodo.20465131)
+
 ## Abstract
 
-This project investigates whether coffee consumption and lifestyle-related variables can predict productivity levels using machine learning techniques.
+This project investigates whether coffee consumption and lifestyle-related variables can predict productivity levels using machine learning techniques. The experiment uses the Global Coffee Health Dataset and demonstrates how correlations may appear meaningful without implying causation. A synthetic productivity label is engineered using sleep duration, sleep quality, and stress level to support educational machine learning experiments.
 
-The experiment uses the Global Coffee Health Dataset and demonstrates how correlations may appear meaningful without implying causation. A synthetic productivity label is engineered using sleep duration, sleep quality, and stress level to support educational machine learning experiments.
-
-The project focuses on:
-- FAIR data principles
-- reproducibility
-- semantic metadata
-- relational data modelling
-- open science workflows
+The project focuses on FAIR data principles, reproducibility, semantic metadata, relational data modelling, and open science workflows.
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 data/
-├── raw/                  # Original dataset
-├── processed/            # Normalized relational CSV exports
+├── raw/                        # Original input dataset
+├── processed/                  # Normalised relational CSV exports
 
 docs/
-├── diagrams/             # ER diagrams and architecture figures
+├── diagrams/                   # ER diagrams
+├── model-card.md               # Model Card (T3.5)
+├── reproducibility.md          # Reproducibility guide
+├── semantic_mapping.md         # Ontology attribute mapping (T2.2)
+├── unit_mapping.md             # Unit of measurement mapping (T2.3)
+├── standards_overlap_analysis.md  # Metadata standards analysis (T3.11)
+├── environment.md              # Environment details
+├── dbrepo_plan.md              # DBRepo integration plan
 
 models/
 ├── logistic_regression_pipeline.pkl
 
 notebooks/
-├── data_loading.ipynb
+├── data_loading.ipynb          # Main experiment notebook
 
 outputs/
 ├── confusion_matrix.png
 ├── predictions.csv
+├── evaluation_metrics.csv
+├── feature_distribution.png
+├── model_comparison.csv
+├── model_comparison.png
 
 sql/
-├── schema.sql
+├── schema.sql                  # 3NF schema + SQL VIEW definitions (T2.1, T2.4)
 
-src/
-config/
+codemeta.json                   # CodeMeta 2.0 software metadata (T3.2)
+croissant.json                  # Croissant dataset metadata (T3.4)
+fair4ml-logistic-regression.json  # FAIR4ML model metadata (T3.3)
+ro-crate-metadata.json          # RO-Crate research object metadata (T3.1)
+CITATION.cff                    # Citation metadata (T3.8)
+requirements.txt                # Python dependencies with version pins
+LICENSE                         # MIT Licence (code)
 ```
 
 ---
 
-# Technologies Used
+## File Organisation
 
-- Python
-- JupyterLab
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
+### Naming Convention
 
----
+This repository follows a consistent naming convention across all artefact categories:
 
-# Dataset
-
-Dataset used:
-
-Global Coffee Health Dataset  
-Source:
-https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset
-
-Main dataset file:
-
-```text
+**Input datasets** — lowercase with underscores, stored in `data/raw/` or `data/processed/`:
+```
 synthetic_coffee_health_10000.csv
+participants.csv, coffee_consumption.csv, sleep_metrics.csv, ...
+```
+
+**Output files** (figures, model artefacts, result tables) — lowercase with underscores, stored in `outputs/` or `models/`:
+```
+confusion_matrix.png
+evaluation_metrics.csv
+logistic_regression_pipeline.pkl
+```
+
+**Scripts and notebooks** — lowercase with underscores, stored in `notebooks/` or `src/`:
+```
+data_loading.ipynb
+```
+
+**Configuration and metadata files** — follow the respective standard's naming convention at the repository root:
+```
+codemeta.json, croissant.json, ro-crate-metadata.json, CITATION.cff, requirements.txt
+```
+
+**Documentation files** — lowercase with underscores, stored in `docs/`:
+```
+model-card.md, semantic_mapping.md, unit_mapping.md, standards_overlap_analysis.md
 ```
 
 ---
 
-# File Organisation
+## Dataset
 
-## Input datasets
-
-```text
-data/raw/synthetic_coffee_health_10000.csv
-```
-
----
-
-## Processed datasets
-
-```text
-data/processed/
-├── participants.csv
-├── countries.csv
-├── genders.csv
-├── occupations.csv
-├── coffee_consumption.csv
-├── sleep_metrics.csv
-├── health_metrics.csv
-├── lifestyle_metrics.csv
-```
+**Global Coffee Health Dataset**
+Source: https://www.kaggle.com/datasets/uom190346a/global-coffee-health-dataset
+Licence: CC BY 4.0
+File: `data/raw/synthetic_coffee_health_10000.csv`
 
 ---
 
-## Jupyter notebooks
+## Technologies Used
 
-```text
-notebooks/data_loading.ipynb
-```
-
----
-
-## Figures and outputs
-
-```text
-outputs/confusion_matrix.png
-outputs/predictions.csv
-outputs/feature_distribution.png
-outputs/evaluation_metrics.csv
-outputs/evaluation_metrics.csv
-outputs/feature_distribution.png
-outputs/model_comparison.csv
-outputs/model_comparison.png
-```
+- Python 3.13
+- JupyterLab 4.5.7
+- Pandas 3.0.3
+- NumPy 2.4.6
+- Scikit-learn 1.8.0
+- Matplotlib 3.10.9
 
 ---
 
-## Model files
+## Requirements and Installation
 
-```text
-models/logistic_regression_pipeline.pkl
-```
-
----
-
-## SQL schema
-
-```text
-sql/schema.sql
-```
-
----
-
-# Machine Learning Pipeline
-
-The experiment workflow includes:
-
-1. Dataset loading
-2. Relational normalization
-3. Feature engineering
-4. Ordinal category encoding
-5. Train/test split
-6. Logistic Regression training
-7. Evaluation and artefact generation
-
-The productivity label is engineered using:
-- sleep duration
-- sleep quality
-- stress level
-
-The label is intended for demonstration purposes only and does not represent a scientifically validated productivity metric.
-
----
-
-# Database Schema (3NF)
-
-The dataset was transformed from a single denormalized CSV file into a relational database schema following Third Normal Form (3NF) principles.
-
-The schema separates reusable categorical entities such as:
-- countries
-- genders
-- occupations
-
-into lookup tables to improve semantic clarity and reduce redundancy.
-
-Main entity tables include:
-- participants
-- coffee_consumption
-- sleep_metrics
-- health_metrics
-- lifestyle_metrics
-
-Relationships between entities are implemented using foreign keys.
-
-This normalization improves:
-- data consistency
-- maintainability
-- FAIR interoperability
-- semantic reuse
-- database scalability
-
----
-
-# SQL Views
-
-The project defines a machine learning oriented SQL view:
-
-## vw_productivity_features
-
-This view combines:
-- participant demographics
-- coffee consumption
-- sleep metrics
-- health indicators
-- lifestyle factors
-
-into a query ready feature table for machine learning experiments.
-
-The view also contains the engineered binary target variable:
-
-- `1` = productive
-- `0` = non-productive
-
----
-
-# Reproducibility
-
-To reproduce the experiment:
-
-1. Install Python dependencies
-2. Launch JupyterLab
-3. Open:
-
-```text
-notebooks/data_loading.ipynb
-```
-
-4. Run all notebook cells sequentially
-
-The notebook performs:
-- preprocessing
-- relational normalization
-- feature engineering
-- model training
-- evaluation
-- artefact generation
-
----
-
-# Contributors
-
-| Role | Name | Student ID |
-|---|---|---|
-| A | Nisar Ahsan | 12331410 |
-| B | Bangash Muhammad Imran Haider | 12428582 |
-| C | Güneş Aykut Tayfun | 12450336 |
-| D | YILDIRIM Gökay | 12450335 |
-
----
-
-# License
-
-This repository currently uses the MIT License for software and code.
-
-Further licensing details for:
-- datasets
-- generated outputs
-- trained models
-
-will be added in later work packages.
-
-# Installation
-
-Install dependencies using:
+Install all Python dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -264,38 +121,140 @@ pip install -r requirements.txt
 
 ---
 
-# Metadata Standards
+## Reproduction Instructions
 
-This repository currently includes the following metadata standards and FAIR related artefacts:
+Follow these steps to reproduce the experiment from scratch:
 
-- CodeMeta (`codemeta.json`)
-- Croissant metadata (`croissant.json`)
-- Model Card (`docs/model-card.md`)
-- RO Crate metadata (`ro-crate-metadata.json`)
-- SQL schema and relational view definitions
-- Unit mapping documentation (`docs/unit_mapping.md`)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity.git
+   cd fair-data-science-coffee-productivity
+   ```
 
-These artefacts support:
-- reproducibility
-- interoperability
-- semantic annotation
-- FAIR machine learning workflows
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Verify the input dataset is present:**
+   ```
+   data/raw/synthetic_coffee_health_10000.csv
+   ```
+
+4. **Launch JupyterLab:**
+   ```bash
+   jupyter lab
+   ```
+
+5. **Open and run the main notebook:**
+   ```
+   notebooks/data_loading.ipynb
+   ```
+   Run all cells sequentially from top to bottom.
+
+6. **Verify outputs were generated:**
+   The notebook automatically produces the following artefacts:
+   - `data/processed/` — normalised relational CSV tables
+   - `models/logistic_regression_pipeline.pkl` — trained model
+   - `outputs/confusion_matrix.png` — evaluation figure
+   - `outputs/evaluation_metrics.csv` — metrics table
+   - `outputs/feature_distribution.png` — feature visualisation
+   - `outputs/predictions.csv` — model predictions
+
+The experiment uses a fixed random seed (`random_state=42`) to support reproducibility across runs.
 
 ---
 
-# Generated Artefacts
+## Database Schema (3NF)
 
-The experiment generates:
-- trained machine learning models
-- evaluation metrics
-- prediction outputs
-- confusion matrices
-- feature distribution figures
+The dataset was transformed from a single denormalized CSV file into a relational schema following Third Normal Form (3NF). The schema separates lookup entities (countries, genders, occupations) from measurement tables.
 
-Generated artefacts are stored in:
+**Tables:** `countries`, `genders`, `occupations`, `participants`, `coffee_consumption`, `sleep_metrics`, `health_metrics`, `lifestyle_metrics`
 
-```text
-models/
-outputs/
-data/processed/
-```
+Schema definition: `sql/schema.sql`
+ER diagram: `docs/diagrams/er_diagram.mmd`
+
+---
+
+## SQL Views (T2.4)
+
+Two SQL views are defined in `sql/schema.sql`:
+
+### `vw_productivity_features`
+**Purpose:** Full de-normalised feature table for the ML pipeline. Joins all 8 tables and computes the engineered binary `productivity_label` (1 = productive, 0 = non-productive) based on sleep duration, sleep quality, and stress level. This is the primary view consumed by the machine learning notebook.
+
+### `vw_coffee_health_aggregates`
+**Purpose:** Exploratory data analysis aggregation view. Groups participants by coffee intake category (None / Low / Moderate / High) and stress level, exposing average health indicators (age, caffeine intake, sleep hours, BMI, heart rate, physical activity) per group. Useful for validating the relational joins and exploring lifestyle patterns before model training.
+
+---
+
+## DBRepo Integration
+
+The DBRepo REST API is used to load input data and retrieve it during the ML pipeline (T2.5, T2.6). See `notebooks/dbrepo_upload.ipynb` for the DBRepo integration notebook.
+
+**DBRepo entry:** https://test.dbrepo.tuwien.ac.at/database/a6229b2e-5a3d-4a46-93aa-e9474f492ec1
+
+**Base URL:** `https://test.dbrepo.tuwien.ac.at`
+
+**Database ID:** `a6229b2e-5a3d-4a46-93aa-e9474f492ec1`
+
+The tables and VIEW endpoints (`vw_productivity_features`, `vw_coffee_health_aggregates`) are defined in `sql/schema.sql`. Full endpoint paths and authentication details will be added once the DBRepo API integration is finalised (T2.6).
+
+---
+
+## Metadata Standards
+
+This repository includes the following metadata standards and FAIR artefacts:
+
+| File | Standard | Task |
+|---|---|---|
+| `ro-crate-metadata.json` | RO-Crate 1.1 | T3.1 |
+| `codemeta.json` | CodeMeta 2.0 | T3.2 |
+| `fair4ml-logistic-regression.json` | FAIR4ML | T3.3 |
+| `croissant.json` | Croissant (ML Commons) | T3.4 |
+| `docs/model-card.md` | Model Card | T3.5 |
+| `CITATION.cff` | Citation File Format | T3.8 |
+
+See `docs/standards_overlap_analysis.md` for a full analysis of overlap and complementarity between these standards.
+
+---
+
+## Licences
+
+This project involves three categories of artefact, each with a distinct licence:
+
+### Input Data
+The Global Coffee Health Dataset is published under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** licence by its original authors on Kaggle. Reuse requires attribution to the original creators. CC BY 4.0 permits reuse, redistribution, and adaptation, including for commercial purposes, provided attribution is given. There are no ShareAlike clauses, so derived outputs are not required to use the same licence.
+Licence URL: https://creativecommons.org/licenses/by/4.0/
+
+### Software / Code
+All code, scripts, and notebooks in this repository are released under the **MIT Licence** (see `LICENSE`). MIT was chosen because it is maximally permissive, compatible with CC BY 4.0 input data (no licence obligations are imposed on the code by CC BY), and widely used in open science and machine learning projects.
+
+### Produced / Output Data
+All generated outputs (trained model `models/logistic_regression_pipeline.pkl`, prediction results, evaluation metrics, and figures in `outputs/`) are released under **Creative Commons Attribution 4.0 International (CC BY 4.0)**. This is consistent with the input data licence and allows other researchers to build on the generated outputs freely, provided attribution is given.
+Licence URL: https://creativecommons.org/licenses/by/4.0/
+
+---
+
+## Contributors
+
+| Role | Name | Student ID | ORCID |
+|---|---|---|---|
+| A | Nisar Ahsan | 12331410 | [0009-0002-0185-7981](https://orcid.org/0009-0002-0185-7981) |
+| B | Bangash Muhammad Imran Haider | 12428582 | [0009-0003-0882-0011](https://orcid.org/0009-0003-0882-0011) |
+| C | Güneş Aykut Tayfun | 12450336 | [0009-0004-1597-039X](https://orcid.org/0009-0004-1597-039X) |
+| D | YILDIRIM Gökay | 12450335 | [0009-0005-3902-8742](https://orcid.org/0009-0005-3902-8742) |
+
+---
+
+## Generated Artefacts
+
+| File | Type | Licence |
+|---|---|---|
+| `models/logistic_regression_pipeline.pkl` | Trained ML model | CC BY 4.0 |
+| `outputs/predictions.csv` | Prediction results | CC BY 4.0 |
+| `outputs/evaluation_metrics.csv` | Evaluation metrics | CC BY 4.0 |
+| `outputs/confusion_matrix.png` | Figure | CC BY 4.0 |
+| `outputs/feature_distribution.png` | Figure | CC BY 4.0 |
+| `outputs/model_comparison.csv` | Model comparison | CC BY 4.0 |
+| `outputs/model_comparison.png` | Figure | CC BY 4.0 |

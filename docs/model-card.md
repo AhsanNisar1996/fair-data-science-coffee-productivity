@@ -97,3 +97,13 @@ The model should not be interpreted as evidence that coffee consumption directly
 The experiment demonstrates the importance of careful interpretation of machine learning outputs and highlights risks associated with misleading correlations in behavioural or health related data.
 
 The project is intended to support FAIR, reproducible, and transparent machine learning practices rather than operational decision making.
+
+---
+
+# Licence
+
+The software and code in this repository — including this model and all training scripts — are released under the **MIT Licence**. The full licence text is available in the `LICENSE` file at the repository root.
+
+The input dataset (Global Coffee Health Dataset, sourced from Kaggle) is published under the **CC BY 4.0 (Creative Commons Attribution 4.0 International)** licence by its original authors. Reuse, including this experiment, requires attribution to the original dataset creators.
+
+The trained model artefact and all generated outputs (predictions, evaluation metrics, figures) are released under **CC BY 4.0**, consistent with the input data licence obligations and open science best practices. The CC BY 4.0 licence permits reuse, redistribution, and adaptation provided attribution is given.
