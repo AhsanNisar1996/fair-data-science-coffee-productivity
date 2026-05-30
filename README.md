@@ -1,5 +1,5 @@
 # Predicting Productivity Levels Based on Coffee Consumption
-
+[![DOI](https://zenodo.org/badge/1232220288.svg)](https://doi.org/10.5281/zenodo.20465131)
 ## Abstract
 
 This project investigates whether coffee consumption and lifestyle-related variables can predict productivity levels using machine learning techniques. The experiment uses data from the European Health Interview Survey (EHIS) and demonstrates how correlations may appear meaningful without implying causation.
