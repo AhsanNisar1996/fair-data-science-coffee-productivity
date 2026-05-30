@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: FAIR Data Science Coffee Productivity
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Nisar
+    given-names: Ahsan
+orcid: https://orcid.org/0009-0002-0185-7981
+
+doi: 10.5281/zenodo.20465132
+
+repository-code: https://github.com/AhsanNisar1996/fair-data-science-coffee-productivity
+
+license: MIT
